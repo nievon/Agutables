@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container mt-5 d-flex justify-content-center">
     <div class="form-wrapper">
         <div class="form-header">{{ __('Вход') }}</div>
         <form method="POST" action="{{ route('login') }}">
@@ -26,17 +26,24 @@
                 @enderror
             </div>
 
-            <div class="form-group form-check">
+            <div class="form-group form-check d-block">
                 <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
                 <label class="form-check-label" for="remember">
                     {{ __('Запомнить меня') }}
                 </label>
             </div>
 
-            <div class="form-group form-actions">
-                <button type="submit" class="btn btn-primary">
-                    {{ __('Войти') }}
-                </button>
+            <div class="form-group form-actions ">
+                <div class="container d-flex justify-content-center">
+                    <button type="submit" class="btn btn-primary">
+                        {{ __('Войти') }}
+                    </button>
+                </div>
+                <div class="container d-flex justify-content-center">
+                    <a type="submit" href="{{route('register')}}" class="btn btn-primary">
+                        {{ __('Зарегистрироваться') }}
+                    </a>
+                </div>
                 <!-- @if (Route::has('password.request'))
                 <a class="btn btn-link" href="{{ route('password.request') }}">
                     {{ __('Забыли пароль?') }}
@@ -48,14 +55,6 @@
 </div>
 
 <style>
-
-    .container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-    }
-
     .form-wrapper {
         background: white;
         padding: 2rem;

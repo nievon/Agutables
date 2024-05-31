@@ -1,0 +1,151 @@
+    /* Стили для главного экрана */
+    .hero {
+        background-color: #f0f0f0;
+        padding: 100px 0;
+        text-align: center;
+    }
+
+    .hero-title {
+        font-size: 3.1rem;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    .hero-subtitle {
+        font-size: 1.8rem;
+        color: #666;
+        margin-bottom: 40px;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+
+    /* Стили для раздела "О нас" */
+    .about {
+        background-color: #fff;
+        padding: 100px 0;
+        text-align: center;
+    }
+
+    .section-title {
+        font-size: 3.4rem;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    .section-description {
+        font-size: 1.4rem;
+        color: #666;
+        margin-bottom: 40px;
+    }
+
+    /* Стили для раздела "Возможности" */
+    .features {
+        background-color: #f0f0f0;
+        padding: 100px 0;
+        text-align: center;
+    }
+
+    .features-grid {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 40px;
+    }
+
+    .feature {
+        flex: 1;
+        padding: 20px;
+        margin: 0 10px;
+        text-align: center;
+    }
+
+    .feature-icon {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 20px;
+    }
+
+    .feature-title {
+        font-size: 1.5rem;
+        color: #333;
+        margin-bottom: 10px;
+    }
+
+    .feature-description {
+        font-size: 1rem;
+        color: #666;
+    }
+
+    .instructions {
+        background-color: #f8f9fa;
+        padding: 60px 0;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+        text-align: center;
+        margin-bottom: 40px;
+        color: #333;
+    }
+
+    .instructions {
+        background-color: #f8f9fa;
+        padding: 60px 0;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+        text-align: center;
+        margin-bottom: 40px;
+        color: #333;
+    }
+
+    .instruction {
+        display: flex;
+        align-items: center;
+        margin: 20px;
+    }
+
+    .instruction-icon {
+        width: 6rem;
+        height: 6rem;
+        margin: 20px;
+    }
+
+    .instruction p {
+        font-size: 1.45rem;
+        color: #555;
+        margin: 0;
+    }
+
+    .instruction-note {
+        font-size: 1.5rem;
+        color: #666;
+        margin-top: 20px;
+        font-style: italic;
+    }
+
+    /* Стили для раздела "Контакты" */
+    .contact {
+        background-color: #f0f0f0;
+        padding: 100px 0;
+        text-align: center;
+    }
+
+    .email {
+        font-size: 1.5rem;
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    .email:hover {
+        text-decoration: underline;
+    }

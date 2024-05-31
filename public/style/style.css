@@ -1,0 +1,44 @@
+.resizable {
+    resize: horizontal;
+    /* Разрешить изменение ширины по горизонтали */
+    overflow-x: auto;
+    /* Добавить горизонтальную прокрутку, если текст не помещается */
+    white-space: nowrap;
+    /* Предотвращает перенос строк */
+}
+
+.table-container::-webkit-scrollbar {
+    width: 12px;
+}
+
+.table-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+    border: 3px solid #f1f1f1;
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+#app {
+    flex: 1 0 auto;
+}
+
+.footer {
+    flex-shrink: 0;
+}

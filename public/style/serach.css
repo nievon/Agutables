@@ -1,0 +1,27 @@
+#searchResults {
+    position: absolute;
+    width: calc(100% - 2px);
+    max-height: calc(80% - 2px);
+    overflow-y: auto;
+    border: 1px solid #ced4da;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    z-index: 1000;
+    background-color: white;
+}
+
+.form-group {
+    position: relative;
+}
+
+#searchTerm:focus+#searchResults {
+    display: block;
+}
+
+#searchResults option {
+    padding: 0.5rem;
+}
+
+#searchResults option:hover {
+    background-color: #f8f9fa;
+}

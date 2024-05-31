@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container mt-5">
     <div class="card">
         <div class="card-header">{{ __('Dashboard') }}</div>
         <div class="card-body">
@@ -15,8 +15,6 @@
     </div>
 </div>
 <style>
-
-
     .card {
         background: white;
         border-radius: 10px;

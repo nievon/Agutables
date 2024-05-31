@@ -9,8 +9,7 @@ class TableController extends Controller
 {
     public function index()
     {
-        $tables = Tables::all();
-        return view('index', compact('tables'));
+        return view('index');
     }
 
     public function table($id)

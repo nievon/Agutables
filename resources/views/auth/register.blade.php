@@ -1,111 +1,125 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="containers">
-    <div class="card">
-        <div class="card-header">Регистрация</div>
-        <div class="card-body">
-            <form method="POST" action="{{ route('register') }}">
-                @csrf
-                <div class="form-group">
-                    <label for="name">Имя</label>
-                    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-                    @error('name')
-                    <span class="invalid-feedback" role="alert">{{ $message }}</span>
-                    @enderror
+<div class="container mt-5 d-flex justify-content-center">
+    <div class="form-wrapper">
+        <div class="form-header">{{ __('Регистрация') }}</div>
+        <form method="POST" action="{{ route('register') }}">
+            @csrf
+            <div class="form-group">
+                <label for="name">{{ __('Имя') }}</label>
+                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                @error('name')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+            </div>
+
+            <div class="form-group">
+                <label for="email">{{ __('Адрес электронной почты') }}</label>
+                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                @error('email')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+            </div>
+
+            <div class="form-group">
+                <label for="password">{{ __('Пароль') }}</label>
+                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                @error('password')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+            </div>
+
+            <div class="form-group">
+                <label for="password-confirm">{{ __('Подтвердите пароль') }}</label>
+                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+            </div>
+
+            <div class="form-group form-actions">
+                <div class="container d-flex justify-content-center">
+                    <button type="submit" class="btn btn-primary">
+                        {{ __('Зарегистрироваться') }}
+                    </button>
                 </div>
-                <div class="form-group">
-                    <label for="email">Адрес электронной почты</label>
-                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-                    @error('email')
-                    <span class="invalid-feedback" role="alert">{{ $message }}</span>
-                    @enderror
-                </div>
-                <div class="form-group">
-                    <label for="password">Пароль</label>
-                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-                    @error('password')
-                    <span class="invalid-feedback" role="alert">{{ $message }}</span>
-                    @enderror
-                </div>
-                <div class="form-group">
-                    <label for="password-confirm">Подтвердите пароль</label>
-                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                </div>
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
-                </div>
-            </form>
-        </div>
+            </div>
+        </form>
     </div>
 </div>
+
 <style>
-/* body {
-        font-family: 'Arial', sans-serif;
-        background-color: #f2f2f2;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-    } */
-
-    .containers  {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        padding: 0 15px;
-    } 
-
-    .card {
+    .form-wrapper {
         background: white;
-        border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        width: 400px;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+        width: 100%;
     }
 
-    .card-header {
-        background-color: #198754;
-        color: white;
-        font-size: 20px;
-        padding: 10px;
+    .form-header {
+        font-size: 2rem;
         text-align: center;
-        border-top-left-radius: 8px;
-        border-top-right-radius: 8px;
-    }
-
-    .card-body {
-        padding: 20px;
+        margin-bottom: 1.5rem;
+        color: #333;
     }
 
     .form-group {
-        margin-bottom: 20px;
+        margin-bottom: 1.5rem;
     }
 
-    label {
+    .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
         font-weight: bold;
+        color: #555;
     }
 
     .form-control {
         width: 100%;
-        padding: 10px;
-        border: 1px solid #ced4da;
-        border-radius: 4px;
+        padding: 0.75rem;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        transition: border-color 0.3s;
     }
 
-    .btn-primary {
-        background-color: #198754;
-        color: white;
+    .form-control:focus {
+        border-color: #007bff;
+        outline: none;
+    }
+
+    .invalid-feedback {
+        display: block;
+        margin-top: 0.5rem;
+        color: #e3342f;
+    }
+
+    .form-actions {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .btn {
+        padding: 0.75rem 1.5rem;
         border: none;
-        border-radius: 4px;
-        padding: 10px 20px;
+        border-radius: 5px;
         cursor: pointer;
         transition: background-color 0.3s;
     }
 
+    .btn-primary {
+        background: #198754;
+        color: white;
+    }
+
     .btn-primary:hover {
-        background-color: #053921;
+        background: #053921;
     }
 </style>
 @endsection
