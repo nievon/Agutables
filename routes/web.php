@@ -3,7 +3,6 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\TableController;
 use App\Http\Controllers\ExcelController;
-use App\Http\Controllers\ProxyController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-    
+
 
 Auth::routes();
 Route::get('/', [TableController::class, 'index'])->name('index');
